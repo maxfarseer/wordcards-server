@@ -12,7 +12,8 @@ List of supported api calls
 
 ### User
 
-- POST `/user/login` - return test token
+- POST `/api/user/login` - return test token
+- POST `/api/user/register` - return test token
 
 ## How to run
 
