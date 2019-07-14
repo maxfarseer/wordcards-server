@@ -1,10 +1,12 @@
 const logger = require('koa-logger');
 const Router = require('koa-router');
 const koaBody = require('koa-body');
+const cors = require('@koa/cors');
 
 const Koa = require('koa');
 const app = new Koa();
 
+app.use(cors());
 app.use(logger());
 app.use(koaBody());
 
@@ -23,7 +25,7 @@ app.use(async (ctx, next) => {
 
 const router = new Router();
 const userRouter = new Router({
-  prefix: '/user'
+  prefix: '/api/user'
 });
 require('./routes/root')({ router });
 require('./routes/user')({ router: userRouter });
